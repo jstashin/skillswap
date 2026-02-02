@@ -89,14 +89,7 @@ const Navbar = () => {
           </>
         )}
 
-        <a
-          href="https://github.com/"
-          target="_blank"
-          rel="noreferrer"
-          className="btn text-white bg-gradient-to-r from-[#8B5CF6] to-[#A855F7] flex items-center gap-2"
-        >
-          <FaGithub /> Contribute
-        </a>
+       
       </div>
     </div>
   );

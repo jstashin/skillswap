@@ -9,12 +9,14 @@ const Skill = ({skill}) => {
         <img src={skill.image} alt="" className="w-60 h-36 object-cover rounded" />
         <h3 className="mt-2 font-semibold">{skill.skillName}</h3>
         <p className="text-sm text-gray-500">{skill.rating}</p>
+        <p className="text-sm text-gray-500"> ${skill.price}</p>
+        <Link to={`/skills/${skill.skillId}`} className="btn btn-sm mt-3">
+        View Details
+      </Link>
        
     
       </div>
-       <Link to={`/skills/${skill.skillId}`} className="btn btn-sm mt-3">
-        View Details
-      </Link>
+      
       </div>
 
 

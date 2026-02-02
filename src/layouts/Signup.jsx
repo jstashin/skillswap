@@ -1,14 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import useAuth from "../hooks/useAuth";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Signup = () => {
-
-
-
-  const { createUser, googleLogin, updateUserProfile } = useAuth();
+const { createUser, googleLogin, updateUserProfile } = useAuth();
   const navigate = useNavigate();
 
   const [name, setName] = useState("");
@@ -18,12 +15,21 @@ const Signup = () => {
 
   const [show, setShow] = useState(false);
 
-  const validatePassword = (pw) => {
-    if (pw.length < 6) return "Password must be at least 6 characters.";
-    if (!/[A-Z]/.test(pw)) return "Password must have an uppercase letter.";
-    if (!/[a-z]/.test(pw)) return "Password must have a lowercase letter.";
-    return "";
-  };
+  const validatePassword = (password) => {
+    if (password.length < 6) {
+      toast.error("Password must be at least 6 characters.");
+      return;
+    }
+      
+    if (!/[A-Z]/.test(password)) {
+      toast.error("Password must have an uppercase letter.");
+      return;
+    }
+    if (!/[a-z]/.test(password)) {
+      toast.error("Password must have a lowercase letter.");
+      return;
+      }
+    }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -91,9 +97,18 @@ const Signup = () => {
           Register
         </button>
 
-        <button className="btn btn-outline w-full" type="button" onClick={handleGoogle}>
-          Continue with Google
-        </button>
+        <button
+  className="btn btn-outline w-full flex items-center justify-center gap-3"
+  type="button"
+  onClick={handleGoogle}
+>
+  <img
+    src="/Logo-google.png"
+    alt="Google"
+    className="w-5 h-5"
+  />
+  <span>Continue with Google</span>
+</button>
       </form>
 
       <p className="text-center mt-4 text-sm">
