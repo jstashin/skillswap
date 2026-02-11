@@ -32,7 +32,7 @@ const ForgotPassword =()=> {
 
   return (
     <div className="max-w-md mx-auto p-6 my-10 bg-base-100 shadow rounded-xl">
-      <h2 className="text-2xl font-bold text-center mb-6">Forgot Password</h2>
+      <h2 className="text-2xl font-bold text-center mb-6">Forgot password</h2>
 
       <form onSubmit={handleReset} className="space-y-4">
         <div>
