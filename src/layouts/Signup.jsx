@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../context/AuthProvider";
@@ -46,84 +46,90 @@ const Signup = () => {
   };
 
   return (
-     <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-500 via-indigo-600 to-purple-600 px-4">
-   <div className="w-full max-w-md bg-white/10 border border-white/20 rounded-2xl p-8 text-white">
-      <h2 className="text-2xl font-bold text-center mb-6">Signup</h2>
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-500 via-indigo-600 to-purple-600 px-4">
+      <div className="w-full max-w-md bg-white/10 border border-white/20 rounded-2xl p-8 text-white relative z-10">
+        <h2 className="text-2xl font-bold text-center mb-6">Signup</h2>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label className="text-sm font-medium">Name</label>
-          <input
-            className="input input-bordered w-full"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-        </div>
-
-        <div>
-          <label className="text-sm font-medium">Photo URL</label>
-          <input
-            className="input input-bordered w-full"
-            value={photoURL}
-            onChange={(e) => setPhotoURL(e.target.value)}
-            required
-          />
-        </div>
-
-        <div>
-          <label className="text-sm font-medium">Email</label>
-          <input
-            className="input input-bordered w-full"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-
-        <div>
-          <label className="text-sm font-medium">Password</label>
-          <div className="relative">
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label className="text-sm font-medium">Name</label>
             <input
-              className="input input-bordered w-full pr-10"
-              type={show ? "text" : "password"}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              className="input input-bordered w-full bg-white/20 text-white"
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Your name"
               required
-              placeholder="Min 6, upper & lower case"
             />
-            <button
-              type="button"
-              className="absolute right-3 top-3 text-gray-500"
-              onClick={() => setShow(!show)}
-            >
-              {show ? <FaEyeSlash /> : <FaEye />}
-            </button>
           </div>
-        </div>
 
-        <button className="btn btn-primary w-full" type="submit">
-          Register
-        </button>
+          <div>
+            <label className="text-sm font-medium">Photo URL</label>
+            <input
+              className="input input-bordered w-full bg-white/20 text-white"
+              type="text"
+              value={photoURL}
+              onChange={(e) => setPhotoURL(e.target.value)}
+            
+              required
+            />
+          </div>
 
-        <button
-          className="btn btn-outline bg-white text-gray-800 w-full flex items-center justify-center gap-3"
-          type="button"
-          onClick={handleGoogle}
-        >
-          <img src="/Logo-google.png" alt="Google" className="w-5 h-5" />
-          <span>Continue with Google</span>
-        </button>
-      </form>
+          <div>
+            <label className="text-sm font-medium">Email</label>
+            <input
+              className="input input-bordered w-full bg-white/20 text-white"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              
+              required
+            />
+          </div>
 
-      <p className="text-center mt-4 text-sm">
-        Already have an account?{" "}
-        <Link className="link link-primary" to="/login">
-          Login
-        </Link>
-      </p>
-    </div></div>
+          <div>
+            <label className="text-sm font-medium">Password</label>
+            <div className="relative">
+              <input
+                className="input input-bordered w-full pr-10 bg-white/20 text-white"
+                type={show ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                
+                required
+              />
+              <button
+                type="button"
+                className="absolute right-3 top-3 text-white/70"
+                onClick={() => setShow(!show)}
+              >
+                {show ? <FaEyeSlash /> : <FaEye />}
+              </button>
+            </div>
+          </div>
+
+          <button className="btn btn-primary w-full" type="submit">
+            Register
+          </button>
+
+          <button
+            className="btn bg-white text-gray-800 w-full flex items-center justify-center gap-3"
+            type="button"
+            onClick={handleGoogle}
+          >
+            <img src="/Logo-google.png" alt="Google" className="w-5 h-5" />
+            <span>Continue with Google</span>
+          </button>
+        </form>
+
+        <p className="text-center mt-4 text-sm">
+          Already have an account?{" "}
+          <Link className="underline" to="/login">
+            Login
+          </Link>
+        </p>
+      </div>
+    </div>
   );
 };
 

@@ -1,16 +1,36 @@
-# React + Vite
+Project Name:
+SkillSwap – A Local Skill Exchange Platform
+                                                    
+Purpose:                                                    
+SkillSwap is a local skill exchange platform where users can browse skill listings (language, coding, yoga etc.) and connect with local providers.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+Live Site: https://skill-swap-skill.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+GitHub Repo: https://github.com/jstashin/skillswap.git
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+Key Features:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Responsive website
+Home page
+Hero slider (Swiper)
+Popular Skills section (cards)
+Extra sections: 
+Top Rated Providers, How It Works, Community Guidelines
+Protected Skill Details Page
+Authentication:
+Login (Email/Password)
+Google login
+Signup with password validation
+
+Used NPM Packages:
+
+firebase -Authentication
+tailwindcss – Styling
+daisyui – UI components
+swiper – Hero slider
+aos – Scroll animations
+react-toastify – Toast notifications
+react-icons – Icons 
