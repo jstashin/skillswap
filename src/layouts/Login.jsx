@@ -1,5 +1,5 @@
 import { useContext, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye } from "react-icons/fa";
 import { IoEyeOff } from "react-icons/io5";
 import { toast } from "react-toastify";
@@ -10,6 +10,10 @@ const Login = () => {
   const [show, setShow] = useState(false);
   const emailRef = useRef(null);
 
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
+
   const handleSignin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -18,22 +22,23 @@ const Login = () => {
     login(email, password)
       .then(() => {
         toast.success("Login successful");
-        window.location.href = "/";
+        navigate(from, { replace: true });
       })
-      .catch((err) => {
-        toast.error(err.message);
-      });
+      .catch((err) => toast.error(err.message));
   };
 
   const handleGoogleSignin = () => {
     googleLogin()
       .then(() => {
         toast.success("Google login successful");
-        window.location.href = "/";
+        navigate(from, { replace: true });
       })
-      .catch((err) => {
-        toast.error(err.message);
-      });
+      .catch((err) => toast.error(err.message));
+  };
+
+  const handleForgetPassword = () => {
+    const email = emailRef.current?.value || "";
+    navigate(`/forgot-password?email=${encodeURIComponent(email)}`);
   };
 
   return (
@@ -68,6 +73,14 @@ const Login = () => {
               {show ? <IoEyeOff /> : <FaEye />}
             </span>
           </div>
+
+          <button
+            type="button"
+            onClick={handleForgetPassword}
+            className="text-sm underline text-left"
+          >
+            Forget Password?
+          </button>
 
           <button type="submit" className="btn btn-primary w-full">
             Login
