@@ -13,24 +13,24 @@ GitHub Repo: https://github.com/jstashin/skillswap.git
 
 Key Features:
 
-Responsive website
-Home page
-Hero slider (Swiper)
-Popular Skills section (cards)
+Responsive website,
+Home page,
+Hero slider (Swiper),
+Popular Skills section (cards),
 Extra sections: 
-Top Rated Providers, How It Works, Community Guidelines
-Protected Skill Details Page
+Top Rated Providers, How It Works, Community Guidelines,
+Protected Skill Details Page,
 Authentication:
-Login (Email/Password)
-Google login
+Login (Email/Password),
+Google login,
 Signup with password validation
 
 Used NPM Packages:
 
-firebase -Authentication
-tailwindcss – Styling
-daisyui – UI components
-swiper – Hero slider
-aos – Scroll animations
-react-toastify – Toast notifications
+firebase -Authentication,
+tailwindcss – Styling,
+daisyui – UI components,
+swiper – Hero slider,
+aos – Scroll animations,
+react-toastify – Toast notifications,
 react-icons – Icons 
