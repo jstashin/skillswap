@@ -57,7 +57,7 @@ const Navbar = () => {
         </div>
 
         <Link to="/" className="flex items-center">
-          <img className="w-10 ml-3 mr-1" src={logo} alt="logo" />
+          <img className="w-20 ml-3 mr-1" src={logo} alt="logo" />
           <span className="text-xl text-fuchsia-700 font-bold hover:text-fuchsia-900 transition-colors">
             SkillSwap
           </span>

@@ -12,7 +12,7 @@ import web from "/web.jpg";
 
 const Banner = () => {
   return (
-    <div className="max-w-6xl mx-auto my-8">
+    <div className="max-w-6xl mx-auto my-13">
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
         spaceBetween={30}

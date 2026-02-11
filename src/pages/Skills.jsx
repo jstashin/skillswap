@@ -7,9 +7,11 @@ const Skills = ({data}) => {
         <div>
             <h1 className='text-3xl text-center p-6'>Skills</h1>
             <Suspense fallback={<h1>loading...</h1>}>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
-                {data.map((skill)=><Skill key={skill.skillId} skill={skill}></Skill>)}
-            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-9">
+  {data.map(skill => (
+    <Skill key={skill.skillId} skill={skill} />
+  ))}
+</div>
             </Suspense>
         </div>
     );

@@ -46,7 +46,8 @@ const Signup = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 my-10 bg-base-100 shadow rounded-xl">
+     <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-500 via-indigo-600 to-purple-600 px-4">
+   <div className="w-full max-w-md bg-white/10 border border-white/20 rounded-2xl p-8 text-white">
       <h2 className="text-2xl font-bold text-center mb-6">Signup</h2>
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -107,7 +108,7 @@ const Signup = () => {
         </button>
 
         <button
-          className="btn btn-outline w-full flex items-center justify-center gap-3"
+          className="btn btn-outline bg-white text-gray-800 w-full flex items-center justify-center gap-3"
           type="button"
           onClick={handleGoogle}
         >
@@ -122,7 +123,7 @@ const Signup = () => {
           Login
         </Link>
       </p>
-    </div>
+    </div></div>
   );
 };
 
