@@ -118,17 +118,6 @@
     "description": "Master formulas, pivot tables, and data visualization in Excel.",
     "image": "https://i.ibb.co.com/wrYt56ff/Purple-and-Blue-Modern-Online-Course-Invitation-A6-Portrait.png",
     "category": "Business"
-  },
-  {
-    "skillId": 11,
-    "skillName": "Cooking Asian Street Food",
-    "providerName": "Siti Rahman",
-    "providerEmail": "siti@skillswap.com",
-    "price": 28,
-    "rating": 4.9,
-    "slotsAvailable": 3,
-    "description": "Cook authentic Asian street dishes with traditional ingredients.",
-    "image": "https://i.postimg.cc/Kz3RMdCq/asian-food.png",
-    "category": "Culinary"
   }
+ 
 ]
