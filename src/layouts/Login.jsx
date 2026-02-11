@@ -1,5 +1,5 @@
 import { useContext, useRef, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router";
 import { FaEye } from "react-icons/fa";
 import { IoEyeOff } from "react-icons/io5";
 import { toast } from "react-toastify";
@@ -12,12 +12,12 @@ const Login = () => {
 
   const location = useLocation();
   const navigate = useNavigate();
-  const from = location.state?.from?.pathname || "/";
+  const from = location.state|| "/";
 
   const handleSignin = (e) => {
     e.preventDefault();
-    const email = e.target.email.value;
-    const password = e.target.password.value;
+    const email = e.target.email?.value;
+    const password = e.target.password?.value;
 
     login(email, password)
       .then(() => {
@@ -37,9 +37,9 @@ const Login = () => {
   };
 
   const handleForgetPassword = () => {
-    const email = emailRef.current?.value || "";
-    navigate(`/forgot-password?email=${encodeURIComponent(email)}`);
-  };
+  navigate(`/forgot-password?email=${emailRef.current?.value || ""}`);
+};
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-300 via-indigo-600 to-purple-600 px-4">

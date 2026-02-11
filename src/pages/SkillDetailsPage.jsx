@@ -1,5 +1,6 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router";
 import SkillDetails from "./SkillDetails";
+import { FaStar } from "react-icons/fa6";
 const SkillDetailsPage = ()=> {
   const skills = useLoaderData();
   const { id } = useParams();
@@ -19,7 +20,7 @@ const SkillDetailsPage = ()=> {
           <p><b>Email:</b> {skill.providerEmail}</p>
           <p><b>Category:</b> {skill.category}</p>
           <p><b>Price:</b> ${skill.price}</p>
-          <p><b>Rating:</b> ⭐ {skill.rating}</p>
+          <p><b>Rating:</b> <FaStar /> {skill.rating}</p>
           <p><b>Slots:</b> {skill.slotsAvailable}</p>
         </div>
       </div>

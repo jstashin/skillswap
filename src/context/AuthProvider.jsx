@@ -1,4 +1,5 @@
-import { createContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
+import { createContext } from "react";
 import { app } from "../firebase/firebase.config";
 import {
   getAuth,
@@ -10,37 +11,44 @@ import {
   signInWithPopup,
   updateProfile,
   sendPasswordResetEmail,
-} from "firebase/auth";
+} from "firebase/auth"; 
 
 export const AuthContext = createContext(null);
 
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 
-export default function AuthProvider({ children }) {
+const AuthProvider =({ children }) =>{
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const createUser = (email, password) =>
-    createUserWithEmailAndPassword(auth, email, password);
+  const createUser = (email, password) =>{
+  return  createUserWithEmailAndPassword(auth, email, password);
+};
+  const login = (email, password) => { 
+    return signInWithEmailAndPassword(auth, email, password); };
 
-  const login = (email, password) => signInWithEmailAndPassword(auth, email, password);
+  const googleLogin = () => 
+    {
+      return signInWithPopup(auth, googleProvider);
+    };
+  const logout = () => {
+    return signOut(auth);
+  };
+  const updateUserProfile = (displayName, photoURL) =>{
+return updateProfile(auth.currentUser, { displayName, photoURL });
+  };
 
-  const googleLogin = () => signInWithPopup(auth, googleProvider);
-
-  const logout = () => signOut(auth);
-
-  const updateUserProfile = (name, photoURL) =>
-    updateProfile(auth.currentUser, { displayName: name, photoURL });
-
-  const resetPassword = (email) => sendPasswordResetEmail(auth, email);
+  const resetPassword = (email) => {
+    return sendPasswordResetEmail(auth, email);
+  };
 
   useEffect(() => {
-    const unsub = onAuthStateChanged(auth, (current) => {
+    const unsubscribe = onAuthStateChanged(auth, (current) => {
       setUser(current);
       setLoading(false);
     });
-    return () => unsub();
+    return () => unsubscribe();
   }, []);
 
   const value = {
@@ -54,5 +62,7 @@ export default function AuthProvider({ children }) {
     resetPassword,
   };
 
+  
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
+export default AuthProvider;

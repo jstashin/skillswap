@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router";
 import Root from "../Root";
 import Home from "../pages/Home";
 import MyProfile from "../pages/MyProfile";
@@ -7,6 +7,7 @@ import Login from "../layouts/Login";
 import ForgotPassword from "../pages/ForgotPassword";
 import SkillDetailsPage from "../pages/SkillDetailsPage";
 import PrivateRoute from "./PrivateRoute";
+import UpdateProfile from "../pages/UpdateProfile";
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +27,14 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+       {
+        path: "/updateProfile",
+        element: (
+          <PrivateRoute>
+            <UpdateProfile/>
+          </PrivateRoute>
+        ),
+      },
       {
         path: "/skills/:id",
         loader: () => fetch("/skillsData.json"),
@@ -35,9 +44,14 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      { path: "/signUp", element: <Signup /> },
-      { path: "/login", element: <Login /> },
-      { path: "/forgot-password", element: <ForgotPassword /> },
+      { path: "/signUp", 
+        element: <Signup /> },
+
+      { path: "/login", 
+        element: <Login /> },
+
+      { path: "/forgot-password", 
+        element: <ForgotPassword /> },
     ],
   },
 ]);

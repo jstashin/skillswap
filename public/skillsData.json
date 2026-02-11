@@ -16,7 +16,7 @@
     "skillName": "Spoken English Practice",
     "providerName": "Sara Hossain",
     "providerEmail": "sara@skillswap.com",
-    "price": 10,
+    "price": 30,
     "rating": 4.6,
     "slotsAvailable": 5,
     "description": "Conversational English sessions for non-native speakers.",
@@ -50,7 +50,7 @@
   {
     "skillId": 5,
     "skillName": "Python for Data Analysis",
-    "providerName": "Ravi Kumar",
+    "providerName": "Ravi Rahman",
     "providerEmail": "ravi@skillswap.com",
     "price": 40,
     "rating": 4.8,

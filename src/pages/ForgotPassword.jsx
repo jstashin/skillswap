@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useSearchParams, useNavigate } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import useAuth from "../hooks/useAuth";
 
@@ -21,9 +21,10 @@ const ForgotPassword =()=> {
     try {
       await resetPassword(email); 
       toast.success("Password reset email sent! Redirecting to Gmail...");
-      setTimeout(() => {
-        window.location.href = "https://mail.google.com";
-      }, 800);
+      
+       window.open("https://mail.google.com", "_blank");
+
+      
     } catch (err) {
       toast.error(err?.message || "Reset failed");
     }
